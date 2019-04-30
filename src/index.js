@@ -12,7 +12,7 @@ class App {
   }
 
   middlewares() {
-    this.express.set(express.urlencoded({ extended: false }));
+    this.express.use(express.urlencoded({ extended: false }));
     this.express.use(express.static(path.resolve(__dirname, "..", "public")));
   }
   views() {
