@@ -24,7 +24,8 @@
     avatarInput.onchange = function(e) {
       var imgFileURL = URL.createObjectURL(e.target.files[0])
 
-      avatarImg.src = imgFileURL
+      avatarImg.src = imgFileURL;
+      avatarImg.classList = 'preview'
     }
   </script>
 {% endblock %}
