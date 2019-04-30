@@ -1,7 +1,7 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
 const path = require("path");
-
+const routes = require("./app/routes");
 class App {
   constructor() {
     this.express = express();
@@ -13,17 +13,20 @@ class App {
 
   middlewares() {
     this.express.set(express.urlencoded({ extended: false }));
+    this.express.use(express.static(path.resolve(__dirname, "..", "public")));
   }
   views() {
-    this.express.set("view engines", "njk");
+    this.express.set("view engine", "njk");
 
     nunjucks.configure(path.resolve(__dirname, "app", "views"), {
       autoescape: true,
       express: this.express,
-      watch: process.env.NODE_ENV !== "development"
+      watch: true
     });
   }
-  routes() {}
+  routes() {
+    this.express.use(routes);
+  }
 }
 
 module.exports = new App().express;

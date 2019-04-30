@@ -1,9 +1,21 @@
 {
+  "name": "goBarber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/celsoyh/goBarber.git",
+  "author": "Celso Hashimoto <celsoyh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
   "devDependencies": {
+    "nodemon": "^1.18.11",
     "sequelize-cli": "^5.4.0"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "nunjucks": "^3.2.0",
+    "pg": "^7.10.0",
     "sequelize": "^5.7.6"
   }
 }
