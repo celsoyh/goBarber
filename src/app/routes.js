@@ -8,6 +8,7 @@ const guestMiddleware = require('./middlewares/guest');
 const flashMsgMiddleware = require('./middlewares/flashMsgs');
 const FileController = require('./controllers/FileController');
 const AppointmentController = require('./controllers/AppointmentController');
+const AvailableController = require('./controllers/AvailableController');
 const multerConfig = require('../config/multer');
 const upload = require('multer')(multerConfig);
 
@@ -24,5 +25,7 @@ routes.use('/app', authMiddleware);
 routes.get('/app/logout', LoginController.destroy);
 routes.get('/app/dashboard', DashboardController.index);
 routes.get('/app/new/:provider', AppointmentController.create);
+
+routes.get('/app/available/:provider', AvailableController.index);
 
 module.exports = routes;
