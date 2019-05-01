@@ -23,6 +23,13 @@ class LoginController {
 
     return res.redirect('/app/dashboard');
   }
+
+  destroy(req, res) {
+    req.session.destroy(() => {
+      res.clearCookie('gobarbersession');
+      return res.redirect('/');
+    });
+  }
 }
 
 module.exports = new LoginController();

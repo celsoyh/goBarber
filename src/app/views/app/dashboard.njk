@@ -1,6 +1,20 @@
 {% extends '_layouts/app.njk' %}
 
 {% block body %}
-
-  <a href="/app/logout">Sair</a>
+  <div class="content">
+    <strong>Olá, {{user.name}}</strong>
+    <p>Inicie um agendamento escolhendo um profissional abaixo:</p>
+    <ul class="providers">
+      {% for provider in providers %}
+        <li class="provider">
+          <div>
+            <img src="/avatar/{{provider.avatar}}" alt=""/>
+            <strong>{{provider.name}}</strong>
+          </div>
+            <a href="/">+</a>
+        <li>
+      {% endfor %}
+    </ul>
+    <a href="/app/logout" class="logout">Sair</a>
+  </div>
 {% endblock %}

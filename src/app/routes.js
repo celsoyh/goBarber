@@ -15,7 +15,7 @@ routes.post('/signin', guestMiddleware, LoginController.store);
 
 routes.use('/app', authMiddleware);
 
-routes.get('/app/dashboard', DashboardController.create);
-routes.get('/app/logout', DashboardController.destroy);
+routes.get('/app/logout', LoginController.destroy);
+routes.get('/app/dashboard', DashboardController.index);
 
 module.exports = routes;
