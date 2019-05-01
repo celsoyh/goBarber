@@ -53,7 +53,7 @@ body {
   margin-bottom: 20px;
 }
 
-.auth-wrapper form input:not([type="checkbox"]) {
+.auth-wrapper form input:not([type='checkbox']) {
   height: 40px;
   padding: 0 15px;
   border: 1px solid #eee;
@@ -63,11 +63,11 @@ body {
   color: #444;
 }
 
-.auth-wrapper form input:not([type="checkbox"]):focus {
+.auth-wrapper form input:not([type='checkbox']):focus {
   border-color: #c1b2f3;
 }
 
-.auth-wrapper form label[for="avatar"] {
+.auth-wrapper form label[for='avatar'] {
   width: 80px;
   height: 80px;
   background: #eee;
@@ -80,23 +80,23 @@ body {
   overflow: hidden;
 }
 
-.auth-wrapper form label[for="avatar"] img.preview {
+.auth-wrapper form label[for='avatar'] img.preview {
   width: 100%;
   min-height: 100%;
 }
 
-.auth-wrapper form label[for="provider"] {
+.auth-wrapper form label[for='provider'] {
   margin: 5px 0 10px;
   font-size: 13px;
   color: #444;
   align-self: center;
 }
 
-.auth-wrapper form label[for="provider"] input {
+.auth-wrapper form label[for='provider'] input {
   margin-right: 2px;
 }
 
-.auth-wrapper form input[type="file"] {
+.auth-wrapper form input[type='file'] {
   display: none;
 }
 
@@ -183,13 +183,13 @@ body {
   font-size: 14px;
   color: #444;
 }
-
+ul.appointment,
 ul.providers {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
-
+.appointment,
 .provider {
   padding: 20px;
   border: 1px solid #ddd;
@@ -200,22 +200,26 @@ ul.providers {
   justify-content: space-between;
 }
 
+.appointment div,
 .provider div {
   display: flex;
   align-items: center;
 }
 
+.appointment img,
 .provider img {
   width: 48px;
   height: 48px;
   border-radius: 50%;
 }
 
+.appointment strong,
 .provider strong {
   margin-left: 15px;
   color: #444;
 }
 
+.appointment a,
 .provider a {
   background: #7159c1;
   padding: 5px 10px;
@@ -224,6 +228,10 @@ ul.providers {
   font-size: 16px;
   border-radius: 4px;
   color: #fff;
+}
+
+.appointment-info {
+  flex-direction: column;
 }
 
 .alert {

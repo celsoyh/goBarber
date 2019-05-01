@@ -1,1 +1,12 @@
 <p>Essas são seus clientes agendados:</p>
+<ul>
+  {% for appointment in appUsers %}
+    <li class="appointment">
+      <img src="/files/{{ appointment.avatar }}" alt="">
+      <div class="appointment-info">
+        <p>{{appointment.name}}</p>
+        <p><strong>Horário:</strong> {{appointment.date}}</p>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
