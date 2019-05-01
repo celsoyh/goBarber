@@ -1,4 +1,5 @@
 const { User } = require('../models');
+const flash = require('connect-flash');
 
 class LoginController {
   create(req, res) {
@@ -9,12 +10,12 @@ class LoginController {
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      console.log('Usuário inválido');
+      req.flash('error', 'Usuário inválido');
       return res.redirect('/');
     }
 
     if (!(await user.checkPassword(password))) {
-      console.log('Senha inválida');
+      req.flash('error', 'Senha inválida');
       return res.redirect('/');
     }
 

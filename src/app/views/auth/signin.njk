@@ -3,6 +3,7 @@
 {% block body %}
   <form action="/signin" method="post">
     <img src="/images/logo.svg" alt="">
+    {% include 'middlewares/flashMsgs.njk' %}
     <input type="text" name="email">
     <input type="password" name="password">
     <button type="submit">Fazer Login</button>

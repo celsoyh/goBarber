@@ -4,6 +4,7 @@ const path = require('path');
 const routes = require('./app/routes');
 const session = require('express-session');
 const LokiStore = require('connect-loki')(session);
+const flash = require('connect-flash');
 class App {
   constructor() {
     this.express = express();
@@ -18,6 +19,7 @@ class App {
     this.express.use(express.static(path.resolve(__dirname, '..', 'public')));
     this.express.use(
       session({
+        name: 'gobarbersession',
         secret: 'GoBarber secret key',
         resave: false,
         saveUninitialized: true,
@@ -26,6 +28,7 @@ class App {
         })
       })
     );
+    this.express.use(flash());
   }
   views() {
     this.express.set('view engine', 'njk');
