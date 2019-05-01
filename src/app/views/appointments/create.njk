@@ -1,0 +1,25 @@
+{% extends '_layouts/app.njk' %}
+
+{% block body %}
+<div class="content">
+  <strong>Agendamento de horário</strong>
+
+  <div class="provider">
+    <div>
+      <img src="/files/{{provider.avatar}}" alt="">
+      <strong>{{provider.name}}</strong>
+    </div>
+  </div>
+
+  <form action="/app/appointments/new/{{provider.id}}" method="post">
+    <input type="text" class="flatpickr" placeholder="Escolha uma data">
+  </form>
+</div>
+
+<script>
+  flatpickr('.flatpickr', {
+    minDate: new Date(),
+    dateFormat: 'd/m/Y'
+  })
+</script>
+{% endblock %}
