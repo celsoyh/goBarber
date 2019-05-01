@@ -6,7 +6,6 @@ class RegisterController {
   }
 
   async store(req, res) {
-    console.log('req', req);
     const { filename: avatar } = req.file;
     await User.create({ ...req.body, avatar });
 
