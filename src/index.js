@@ -5,6 +5,7 @@ const routes = require('./app/routes');
 const session = require('express-session');
 const LokiStore = require('connect-loki')(session);
 const flash = require('connect-flash');
+
 class App {
   constructor() {
     this.express = express();

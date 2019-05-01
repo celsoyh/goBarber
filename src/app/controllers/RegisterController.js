@@ -6,8 +6,9 @@ class RegisterController {
   }
 
   async store(req, res) {
-    req.body.avatar = 'test.jpg';
-    await User.create(req.body);
+    console.log('req', req);
+    const { filename: avatar } = req.file;
+    await User.create({ ...req.body, avatar });
 
     return res.redirect('/signup');
   }

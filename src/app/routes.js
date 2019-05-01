@@ -6,9 +6,14 @@ const DashboardController = require('./controllers/DashboardController');
 const authMiddleware = require('./middlewares/auth');
 const guestMiddleware = require('./middlewares/guest');
 const flashMsgMiddleware = require('./middlewares/flashMsgs');
+const FileController = require('./controllers/FileController');
+const multerConfig = require('../config/multer');
+const upload = require('multer')(multerConfig);
+
+routes.get('/files/:file', FileController.show);
 
 routes.get('/signup', RegisterController.create);
-routes.post('/signup', RegisterController.store);
+routes.post('/signup', upload.single('avatar'), RegisterController.store);
 
 routes.get('/', flashMsgMiddleware, guestMiddleware, LoginController.create);
 routes.post('/signin', guestMiddleware, LoginController.store);
